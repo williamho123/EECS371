@@ -1,2 +1,1 @@
-# EECS372
-KRR
+# EECS372 - KRR
