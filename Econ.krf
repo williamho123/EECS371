@@ -1,3 +1,5 @@
+(in-microtheory DegreeRequirementsMt)	
+
 (<== (completedCore ?student Economics)
   (passed ?student ECON201)
   (passed ?student ECON202)
