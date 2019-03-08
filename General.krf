@@ -1,3 +1,5 @@
+(in-microtheory DegreeRequirementsMt)	
+
 (<== (earnedDegree ?student ?major)
   (completedCore ?student ?major)
   (completedElectives ?student ?major)
