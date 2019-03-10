@@ -16,7 +16,11 @@
   (completed ?student Econ_FieldCourseRequirement))
   
   
-(fulfills ECON330 Econ_FieldCourseRequirement)
+(<== (fullfills ?course Econ_FieldCourseRequirement)
+  (course ?course 300 Economics))
+
+(<== (fullfills ?course Econ_FieldCourseRequirement)
+  (course ?course 400 Economics))
  
 (<== (completed ?student Econ_FieldCourseRequirement)
   (fulfills ?course1 Econ_FieldCourseRequirement)
@@ -38,16 +42,22 @@
   (completed ?student Econ_RelatedFieldsCourseRequirement))
   
   
+(<== (fulfills ?course Econ_RelatedFieldsCourseRequirement)
+       (course ?course ?level ?subject)
+       (different ?level 100)
+       (different ?subject Economics))
+
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course1 Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course2 Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course3 Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course4 Econ_RelatedFieldsCourseRequirement)
-  (fulfills ?course5 Econ_RelatedFieldsCourseRequirement)
-
+  (fulfills ?course5 Econ_RelatedFieldsCourseRequirement) 
   (passed ?student ?course1)
   (passed ?student ?course2)
   (passed ?student ?course3)
   (passed ?student ?course4)
   (passed ?student ?course5)
   (different ?course1 ?course2 ?course3 ?course4 ?course5))
+  
+  
