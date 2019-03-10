@@ -1,0 +1,23 @@
+(in-microtheory DegreeRequirementsMt)	
+
+(course ECON201 200 Economics)
+  (course ECON202 200 Economics)
+  (course ECON281 200 Economics)
+  (course ECON310-1 300 Economics)
+  (course ECON310-2 300 Economics)
+  (course ECON311 300 Economics)
+  
+  
+    (course ECON349 300 Economics)
+  (course ECON341 300 Economics)
+  (course ECON362 300 Economics)
+  (course ECON329 300 Economics)
+    (course ECON330 300 Economics)
+(course ECON339 300 Economics)  
+
+
+(course MATH220 200 Mathematics)
+(course STAT210 200 Statistics)
+(course MATH290-1 200 Mathematics)
+(course MATH290-2 200 Mathematics)
+(course HIST250-2 200 History)
