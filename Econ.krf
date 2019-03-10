@@ -27,10 +27,10 @@
   (completed ?student Econ_FieldCourseRequirement))
   
   
-(<== (fullfills ?course Econ_FieldCourseRequirement)
+(<== (fulfills ?course Econ_FieldCourseRequirement)
   (course ?course 300 Economics))
 
-(<== (fullfills ?course Econ_FieldCourseRequirement)
+(<== (fulfills ?course Econ_FieldCourseRequirement)
   (course ?course 400 Economics))
  
 (<== (completed ?student Econ_FieldCourseRequirement)
