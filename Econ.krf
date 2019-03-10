@@ -1,5 +1,11 @@
 (in-microtheory DegreeRequirementsMt)	
 
+(isa passed Predicate)
+(isa test Predicate)
+(<== (test ?student Economics)
+    (passed ?student ECON201)
+  )
+
 (<== (completedCore ?student Economics)
   (passed ?student ECON201)
   (passed ?student ECON202)
@@ -64,5 +70,4 @@
   (passed ?student ?course4)
   (passed ?student ?course5)
   (different ?course1 ?course2 ?course3 ?course4 ?course5))
-  
   

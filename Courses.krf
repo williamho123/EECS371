@@ -126,6 +126,7 @@
 (course MATH311-1 300 Mathematics)
 (course MATH311-2 300 Mathematics)
 (course MATH311-3 300 Mathematics)
+(course MATH314   300 Mathematics)
 (course MATH320-1 300 Mathematics)
 (course MATH320-2 300 Mathematics)
 (course MATH320-3 300 Mathematics)
@@ -279,6 +280,7 @@
 
 
 
+(course HIST250-2 200 History)
 
 
 
