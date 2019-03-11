@@ -34,12 +34,12 @@
 (fulfills ECON339 Econ_FieldCourseRequirement)
 
 (<== (completed ?student Econ_FieldCourseRequirement)
-  (passedRequirementCourse ?student Econ_FieldRequirement ?course1)
-  (passedRequirementCourse ?student Econ_FieldRequirement ?course2)
-  (passedRequirementCourse ?student Econ_FieldRequirement ?course3)
-  (passedRequirementCourse ?student Econ_FieldRequirement ?course4)
-  (passedRequirementCourse ?student Econ_FieldRequirement ?course5)
-  (passedRequirementCourse ?student Econ_FieldRequirement ?course6)
+  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course1)
+  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course2)
+  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course3)
+  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course4)
+  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course5)
+  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course6)
   (different ?course1 ?course2 ?course3 ?course4 ?course5 ?course6))
   
 (<== (completedRelated ?student Economics)
