@@ -50,11 +50,6 @@
   
 (<== (completedRelated ?student Economics)
   (completed ?student Econ_RelatedFieldsCourseRequirement))
-  
-(<== (fulfills ?course Econ_RelatedFieldsCourseRequirement)
-  (course ?course ?level ?subject)
-  (different ?level 100)
-  (different ?subject Economics))
 
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
   (passed ?student ?course1)
@@ -65,8 +60,8 @@
   (fulfills ?course3 Econ_RelatedFieldsCourseRequirement)
   (different ?course1 ?course2 ?course3))
   
-(course MATH220 200 Mathematics)	
-(course STAT210 200 Statistics)	
-(course MATH290-1 200 Mathematics)	
-(course MATH290-2 200 Mathematics)	
-(course HIST250-2 200 History) 
+(fulfills MATH220 Econ_RelatedFieldsCourseRequirement)
+(fulfills STAT210 Econ_RelatedFieldsCourseRequirement)
+(fulfills MATH290-1 Econ_RelatedFieldsCourseRequirement)
+(fulfills MATH290-2 Econ_RelatedFieldsCourseRequirement)
+(fulfills HISTORY250-2 Econ_RelatedFieldsCourseRequirement)
