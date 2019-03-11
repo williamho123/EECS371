@@ -1,3 +1,20 @@
+(in-microtheory DegreeRequirementsMt)
+
+(<== (completedDistroArea ?student ?area)
+  (passed ?student ?course1)
+  (passed ?student ?course2)
+  (fulfillsDistro ?course1 ?area)
+  (fulfillsDistro ?course2 ?area)
+  (different ?course1 ?course2))
+   
+(<== (completedDistroRequirement ?student)
+  (completedDistroArea ?student I)
+  (completedDistroArea ?student II)
+  (completedDistroArea ?student III)
+  (completedDistroArea ?student IV)
+  (completedDistroArea ?student V)
+  (completedDistroArea ?student VI))
+
 (fulfillsDistro	ANTHRO213	I	)
 (fulfillsDistro	ANTHRO308	I	)
 (fulfillsDistro	ANTHRO309	I	)
