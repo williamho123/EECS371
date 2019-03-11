@@ -64,3 +64,9 @@
   (fulfills ?course2 Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course3 Econ_RelatedFieldsCourseRequirement)
   (different ?course1 ?course2 ?course3))
+  
+(course MATH220 200 Mathematics)	
+(course STAT210 200 Statistics)	
+(course MATH290-1 200 Mathematics)	
+(course MATH290-2 200 Mathematics)	
+(course HIST250-2 200 History) 
