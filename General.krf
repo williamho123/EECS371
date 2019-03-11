@@ -3,4 +3,6 @@
 (<== (earnedDegree ?student ?major)
   (completedCore ?student ?major)
   (completedElectives ?student ?major)
-  (completedRelated ?student ?major))
+  (completedRelated ?student ?major)
+  (completedDistroRequirement ?student))
+
