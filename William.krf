@@ -1,20 +1,18 @@
 (in-microtheory DegreeRequirementsMt)	
 
 (passed William ECON201)
-  (passed William ECON202)
-  (passed William ECON281)
-  (passed William ECON310-1)
-  (passed William ECON310-2)
-  (passed William ECON311)
-  
-  
-    (passed William ECON349)
-  (passed William ECON341)
-  (passed William ECON362)
-  (passed William ECON329)
-    (passed William ECON330)
-(passed William ECON339)  
+(passed William ECON202)
+(passed William ECON281)
+(passed William ECON310-1)
+(passed William ECON310-2)
+(passed William ECON311)
 
+(passed William ECON349)
+(passed William ECON341)
+(passed William ECON362)
+(passed William ECON329)
+(passed William ECON330)
+(passed William ECON339)  
 
 (passed William MATH220)
 (passed William STAT210)
