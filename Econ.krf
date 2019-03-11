@@ -2,6 +2,8 @@
 
 (isa passed Predicate)
 (isa test Predicate)
+
+
 (<== (test ?student Economics)
     (passed ?student ECON201)
   )
@@ -26,27 +28,30 @@
 (<== (completedElectives ?student Economics)
   (completed ?student Econ_FieldCourseRequirement))
   
-  
-(<== (fulfills ?course Econ_FieldCourseRequirement)
-  (course ?course 300 Economics))
+(fulfills ECON349 Econ_FieldCourseRequirement)
+(fulfills ECON341 Econ_FieldCourseRequirement)
+(fulfills ECON362 Econ_FieldCourseRequirement)
+(fulfills ECON329 Econ_FieldCourseRequirement)
+(fulfills ECON330 Econ_FieldCourseRequirement)
+(fulfills ECON339 Econ_FieldCourseRequirement)
 
-(<== (fulfills ?course Econ_FieldCourseRequirement)
-  (course ?course 400 Economics))
- 
+
+
 (<== (completed ?student Econ_FieldCourseRequirement)
+ (passed ?student ?course1)
+  (passed ?student ?course2)
+  (passed ?student ?course3)
+  (passed ?student ?course4)
+  (passed ?student ?course5)
+  (passed ?student ?course6)
   (fulfills ?course1 Econ_FieldCourseRequirement)
   (fulfills ?course2 Econ_FieldCourseRequirement)
   (fulfills ?course3 Econ_FieldCourseRequirement)
   (fulfills ?course4 Econ_FieldCourseRequirement)
   (fulfills ?course5 Econ_FieldCourseRequirement)
   (fulfills ?course6 Econ_FieldCourseRequirement)
-  (different ?course1 ?course2 ?course3 ?course4 ?course5 ?course6)
-  (passed ?student ?course1)
-  (passed ?student ?course2)
-  (passed ?student ?course3)
-  (passed ?student ?course4)
-  (passed ?student ?course5)
-  (passed ?student ?course6))
+ 
+    (different ?course1 ?course2 ?course3 ?course4 ?course5 ?course6))
   
   
 (<== (completedRelated ?student Economics)
@@ -59,15 +64,12 @@
        (different ?subject Economics))
 
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
+(passed ?student ?course1)
+  (passed ?student ?course2)
+  (passed ?student ?course3)
   (fulfills ?course1 Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course2 Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course3 Econ_RelatedFieldsCourseRequirement)
-  (fulfills ?course4 Econ_RelatedFieldsCourseRequirement)
-  (fulfills ?course5 Econ_RelatedFieldsCourseRequirement) 
-  (passed ?student ?course1)
-  (passed ?student ?course2)
-  (passed ?student ?course3)
-  (passed ?student ?course4)
-  (passed ?student ?course5)
-  (different ?course1 ?course2 ?course3 ?course4 ?course5))
+  
+  (different ?course1 ?course2 ?course3))
   
