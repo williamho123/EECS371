@@ -5,4 +5,8 @@
   (completedElectives ?student ?major)
   (completedRelated ?student ?major)
   (completedDistroRequirement ?student))
+  
+(<== (passedRequirementCourse ?student ?requirement ?course)
+    (passed ?student ?course)
+    (fulfills ?course ?requirement))
 
