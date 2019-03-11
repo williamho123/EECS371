@@ -46,12 +46,9 @@
   (completed ?student Econ_RelatedFieldsCourseRequirement))
 
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
-  (passed ?student ?course1)
-  (passed ?student ?course2)
-  (passed ?student ?course3)
-  (fulfills ?course1 Econ_RelatedFieldsCourseRequirement)
-  (fulfills ?course2 Econ_RelatedFieldsCourseRequirement)
-  (fulfills ?course3 Econ_RelatedFieldsCourseRequirement)
+  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course1)
+  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course2)
+  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course3)
   (different ?course1 ?course2 ?course3))
   
 (fulfills MATH220 Econ_RelatedFieldsCourseRequirement)
