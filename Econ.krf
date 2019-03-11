@@ -3,10 +3,8 @@
 (isa passed Predicate)
 (isa test Predicate)
 
-
 (<== (test ?student Economics)
-    (passed ?student ECON201)
-  )
+  (passed ?student ECON201))
 
 (<== (completedCore ?student Economics)
   (passed ?student ECON201)
@@ -35,10 +33,8 @@
 (fulfills ECON330 Econ_FieldCourseRequirement)
 (fulfills ECON339 Econ_FieldCourseRequirement)
 
-
-
 (<== (completed ?student Econ_FieldCourseRequirement)
- (passed ?student ?course1)
+  (passed ?student ?course1)
   (passed ?student ?course2)
   (passed ?student ?course3)
   (passed ?student ?course4)
@@ -50,26 +46,21 @@
   (fulfills ?course4 Econ_FieldCourseRequirement)
   (fulfills ?course5 Econ_FieldCourseRequirement)
   (fulfills ?course6 Econ_FieldCourseRequirement)
- 
-    (different ?course1 ?course2 ?course3 ?course4 ?course5 ?course6))
-  
+  (different ?course1 ?course2 ?course3 ?course4 ?course5 ?course6))
   
 (<== (completedRelated ?student Economics)
   (completed ?student Econ_RelatedFieldsCourseRequirement))
   
-  
 (<== (fulfills ?course Econ_RelatedFieldsCourseRequirement)
-       (course ?course ?level ?subject)
-       (different ?level 100)
-       (different ?subject Economics))
+  (course ?course ?level ?subject)
+  (different ?level 100)
+  (different ?subject Economics))
 
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
-(passed ?student ?course1)
+  (passed ?student ?course1)
   (passed ?student ?course2)
   (passed ?student ?course3)
   (fulfills ?course1 Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course2 Econ_RelatedFieldsCourseRequirement)
   (fulfills ?course3 Econ_RelatedFieldsCourseRequirement)
-  
   (different ?course1 ?course2 ?course3))
-  
