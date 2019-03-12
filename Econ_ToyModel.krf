@@ -15,7 +15,8 @@
   (passed ?student ECON310-2)
   (passed ?student ECON311)
   (passed ?student MATH220)
-  (fulfills ?stats Econ_StatsRequirement))
+  (fulfills ?stats Econ_StatsRequirement)
+  (passed ?student ?stats))
   
 (fulfills ECON381-1 Econ_EconometricsRequirement)
 (fulfills ECON281 Econ_EconometricsRequirement)
