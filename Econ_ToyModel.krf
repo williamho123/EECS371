@@ -32,6 +32,10 @@
 (fulfills ECON329 Econ_FieldCourseRequirement)
 (fulfills ECON330 Econ_FieldCourseRequirement)
 (fulfills ECON339 Econ_FieldCourseRequirement)
+(fulfills ECON342 Econ_FieldCourseRequirement)
+(fulfills ECON351 Econ_FieldCourseRequirement)
+(fulfills ECON309 Econ_FieldCourseRequirement)
+
 
 (<== (completed ?student Econ_FieldCourseRequirement)
   (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course1)
@@ -53,3 +57,7 @@
 (fulfills MATH290-1 Econ_RelatedFieldsCourseRequirement)
 (fulfills MATH290-2 Econ_RelatedFieldsCourseRequirement)
 (fulfills HISTORY250-2 Econ_RelatedFieldsCourseRequirement)
+(fulfills MATH224 Econ_RelatedFieldsCourseRequirement)
+(fulfills MATH230 Econ_RelatedFieldsCourseRequirement)
+(fulfills PSYCH110 Econ_RelatedFieldsCourseRequirement)
+

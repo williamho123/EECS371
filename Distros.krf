@@ -17,18 +17,28 @@
 
 (fulfillsDistro EARTH105 I)
 (fulfillsDistro ASTRON120 I)
+(fulfillsDistro CHEM171 I)
+(fulfillsDistro PSYCH212 I)
 
 (fulfillsDistro MATH290-1 II)
 (fulfillsDistro MATH290-2 II)
+(fulfillsDistro MATH230 II)
+(fulfillsDistro MATH240 II)
 
 (fulfillsDistro ECON201 III)
 (fulfillsDistro ECON202 III)
 
 (fulfillsDistro HISTORY250-1 IV)
 (fulfillsDistro HISTORY250-2 IV)
+(fulfillsDistro ASIANAM214 IV)
+(fulfillsDistro ASIANAM220 IV)
 
 (fulfillsDistro LING222 V)
 (fulfillsDistro PHIL110 V)
+(fulfillsDistro ASIANAM350 V)
+(fulfillsDistro RELIGION170 V)
 
 (fulfillsDistro ASIANLC290 VI)
 (fulfillsDistro GERMAN228 VI)
+(fulfillsDistro PERFST103 VI)
+
