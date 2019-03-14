@@ -1,11 +1,16 @@
 (in-microtheory DegreeRequirementsMt)	
 
+;; ontologizes the economics major and what it 
+;; takes to get an economic degree 
+
 (isa passed Predicate)
 (isa test Predicate)
 
+;; sanity test 
 (<== (test ?student Economics)
   (passed ?student ECON201))
 
+;; has a student completed the core part of the economics major 
 (<== (completedCore ?student Economics)
   (passed ?student ECON201)
   (passed ?student ECON202)
@@ -18,6 +23,7 @@
   (fulfills ?stats Econ_StatsRequirement)
   (passed ?student Econ_StatsRequirement))
   
+;; multiple courses fulfill the conometrics requirement 
 (fulfills ECON381-1 Econ_EconometricsRequirement)
 (fulfills ECON281 Econ_EconometricsRequirement)
 
