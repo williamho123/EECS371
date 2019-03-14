@@ -4,7 +4,7 @@
   (completedRequirement Core ?student ?major)
   (completedRequirement Electives ?student ?major)
   (completedRequirement Related ?student ?major)
-  (completedRequirement Distro ?student))
+  (completedRequirement Distro ?student ?major))
   
 (<== (passedRequirementCourse ?student ?requirement ?course)
     (passed ?student ?course)
