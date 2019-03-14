@@ -11,7 +11,7 @@
    
 ;; horn clause to see if student has completed a the distro requirement
 ;; for a specific area 
-(<== (completedRequirement Distro ?student)
+(<== (completedRequirement Distro ?student ? major)
   (completedDistroArea ?student I)
   (completedDistroArea ?student II)
   (completedDistroArea ?student III)
