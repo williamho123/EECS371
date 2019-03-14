@@ -1,5 +1,7 @@
 (in-microtheory DegreeRequirementsMt)
 
+;; horn clause to check if student has completed the distro 
+;; in an area 
 (<== (completedDistroArea ?student ?area)
   (passed ?student ?course1)
   (passed ?student ?course2)
@@ -7,6 +9,8 @@
   (fulfillsDistro ?course2 ?area)
   (different ?course1 ?course2))
    
+;; horn clause to see if student has completed a the distro requirement
+;; for a specific area 
 (<== (completedDistroRequirement ?student)
   (completedDistroArea ?student I)
   (completedDistroArea ?student II)
@@ -15,6 +19,7 @@
   (completedDistroArea ?student V)
   (completedDistroArea ?student VI))
 
+;; horn clauses that list the distro areas certain classes fulfill
 (fulfillsDistro EARTH105 I)
 (fulfillsDistro ASTRON120 I)
 (fulfillsDistro CHEM171 I)
