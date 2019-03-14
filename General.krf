@@ -11,7 +11,7 @@
     (fulfills ?course ?requirement))
 
 (<== (requirementNotMet ?student ?major 
-      (SetDifferenceFn (TheSet ?req) (TheSet Core Electives Related Distro))
+      (SetDifferenceFn (TheSet ?req) (TheSet Core Electives Related Distro)))
     (completedRequirement ?req ?student ?major))
   
 
