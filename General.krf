@@ -1,7 +1,3 @@
 (in-microtheory DegreeRequirementsMt)	
 
-(<== (earnedDegree ?student ?major)
-  (completedRequirement Core ?student ?major))
-
-
-
+(competedRequirement Core William Economics)
