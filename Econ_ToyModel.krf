@@ -6,7 +6,7 @@
 (<== (test ?student Economics)
   (passed ?student ECON201))
 
-(<== (completedCore ?student Economics)
+(<== (completedRequirement Core ?student Economics)
   (passed ?student ECON201)
   (passed ?student ECON202)
   (fulfills ?econometrics Econ_EconometricsRequirement)
@@ -24,7 +24,7 @@
 (fulfills STAT210 Econ_StatsRequirement)
 (fulfills MATH314 Econ_StatsRequirement)
   
-(<== (completedElectives ?student Economics)
+(<== (completedRequirement Electives ?student Economics)
   (completed ?student Econ_FieldCourseRequirement))
   
 (fulfills ECON349 Econ_FieldCourseRequirement)
@@ -44,7 +44,7 @@
   (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course3)
   (different ?course1 ?course2 ?course3))
   
-(<== (completedRelated ?student Economics)
+(<== (completedRequirement Related ?student Economics)
   (completed ?student Econ_RelatedFieldsCourseRequirement))
 
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
