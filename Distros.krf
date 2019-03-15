@@ -1,16 +1,8 @@
 (in-microtheory DegreeRequirementsMt)
 
-;; horn clause to check if student has completed the distro 
-;; in an area 
-(<== (completedDistroArea ?student ?area)
-  (passed ?student ?course1)
-  (passed ?student ?course2)
-  (fulfillsDistro ?course1 ?area)
-  (fulfillsDistro ?course2 ?area)
-  (different ?course1 ?course2))
    
-;; horn clause to see if student has completed a the distro requirement
-;; for a specific area 
+;; horn clause to see if student has completed all of their distribution
+;; requirements for the Weinberg College 
 (<== (completedDistroRequirement ?student)
   (completedDistroArea ?student I)
   (completedDistroArea ?student II)
@@ -19,7 +11,17 @@
   (completedDistroArea ?student V)
   (completedDistroArea ?student VI))
 
-;; horn clauses that list the distro areas certain classes fulfill
+;; horn clause to check if student has completed the distro 
+;; in a specific area 
+(<== (completedDistroArea ?student ?area)
+  (passed ?student ?course1)
+  (passed ?student ?course2)
+  (fulfillsDistro ?course1 ?area)
+  (fulfillsDistro ?course2 ?area)
+  (different ?course1 ?course2))
+   
+
+;; distro areas that certan classes fulfill
 (fulfillsDistro EARTH105 I)
 (fulfillsDistro ASTRON120 I)
 (fulfillsDistro CHEM171 I)
@@ -46,4 +48,3 @@
 (fulfillsDistro ASIANLC290 VI)
 (fulfillsDistro GERMAN228 VI)
 (fulfillsDistro PERFST103 VI)
-
