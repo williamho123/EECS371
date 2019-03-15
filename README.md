@@ -9,6 +9,8 @@ A high level overview of each file:
 - Distros.krf : contains the logic to see if a student has passed distro requirements as well as all available distro courses.
 - Econ.krf : contains the logic representing requirements needed for an Econ major, as well as courses that statisfy its requirments.
 - GeneralReqs.krf : contains high level query predicates that the are available to the user.
+- Julie.krf : the classes that Julie has taken.
+- William.krf : the classes that William has taken.
 
 ## Load GeneralReqs.krf, William.krf, Julie.krf, Econ.krf, Distro.krf
 
