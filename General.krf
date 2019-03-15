@@ -16,7 +16,9 @@
 
 (<== (requirementNotMet ?student ?major ?not_met_reqs)
     (evaluate ?not_met_reqs
-      	(SetDifferenceFn (TheClosedRetrievalSetOf ?req
+      	(SetDifferenceFn 
+          (TheSet Core Electives Related)
+          (TheClosedRetrievalSetOf ?req
 			 	(completedRequirement ?req ?student ?major))
-		      	 (TheSet Core Electives Related)))
+		      	 ))
     )
