@@ -22,7 +22,7 @@ By running this query, you notice that while William has in fact completed an ec
 ## Use the query: (requirementNotMet ?student ?major ?r)
 
 This query will return the set of all requirements that a student has yet to complete to earn degree with some major.
-Note that while ?student and ?major can be bound, ?r should be left free as it is the return variable.(e.g. (requirementNotMet Julie Electives ?r))
+Note that while ?student and ?major can be bound, ?r should be left free as it is the return variable.(e.g. (requirementNotMet Julie Economics ?r))
 
 ## Use the query: (passedRequirementCourse ?student ?requirement ?course)
 
