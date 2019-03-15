@@ -1,5 +1,6 @@
 (in-microtheory DegreeRequirementsMt)	
 
+;; courses, their levels, and their departments 
 ;;; Economics Courses ;;;
 (course ECON201 200 Economics)
 (course ECON202 200 Economics)

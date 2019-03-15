@@ -1,5 +1,9 @@
 (in-microtheory DegreeRequirementsMt)	
 
+;; a student has earned a degree in a major if they have 
+;; completed the core for that major, the elective courses for that 
+;; major, the related courses for that major, and the core courses for 
+;; that major along with their distro requirements
 (<== (earnedDegree ?student ?major)
   (completedCore ?student ?major)
   (completedElectives ?student ?major)

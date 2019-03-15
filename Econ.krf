@@ -1,7 +1,7 @@
 (in-microtheory DegreeRequirementsMt)	
 
-;; ontologizes the economics major and what it 
-;; takes to get an economic degree 
+;; ontologizes the economics major and the requirements for an 
+;; econ degree 
 
 (isa passed Predicate)
 (isa test Predicate)
@@ -23,23 +23,21 @@
   (fulfills ?stats Econ_StatsRequirement)
   (passed ?student Econ_StatsRequirement))
   
-;; multiple courses fulfill the conometrics requirement 
+;; multiple courses fulfill the econometrics requirement 
 (fulfills ECON381-1 Econ_EconometricsRequirement)
 (fulfills ECON281 Econ_EconometricsRequirement)
 
+;; multiple courses fulfil the econ stats requirement
 (fulfills STAT210 Econ_StatsRequirement)
 (fulfills MATH314 Econ_StatsRequirement)
   
+;; a student has completed their electives if they have completed 
+;; their econ field course requirement 
 (<== (completedElectives ?student Economics)
   (completed ?student Econ_FieldCourseRequirement))
-  
-(fulfills ECON349 Econ_FieldCourseRequirement)
-(fulfills ECON341 Econ_FieldCourseRequirement)
-(fulfills ECON362 Econ_FieldCourseRequirement)
-(fulfills ECON329 Econ_FieldCourseRequirement)
-(fulfills ECON330 Econ_FieldCourseRequirement)
-(fulfills ECON339 Econ_FieldCourseRequirement)
 
+;; a student has completed their econ fieldcourse requirement if 
+;; they have taken 6 econ field courses
 (<== (completed ?student Econ_FieldCourseRequirement)
   (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course1)
   (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course2)
@@ -49,8 +47,19 @@
   (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course6)
   (different ?course1 ?course2 ?course3 ?course4 ?course5 ?course6))
   
+;; these courses fulfill the econ field course requirement
+(fulfills ECON349 Econ_FieldCourseRequirement)
+(fulfills ECON341 Econ_FieldCourseRequirement)
+(fulfills ECON362 Econ_FieldCourseRequirement)
+(fulfills ECON329 Econ_FieldCourseRequirement)
+(fulfills ECON330 Econ_FieldCourseRequirement)
+(fulfills ECON339 Econ_FieldCourseRequirement)
+
+  
+;; a student
 (<== (completedRelated ?student Economics)
   (completed ?student Econ_RelatedFieldsCourseRequirement))
+    
 
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
   (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course1)
