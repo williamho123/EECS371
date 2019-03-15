@@ -1,16 +1,13 @@
 (in-microtheory DegreeRequirementsMt)	
 
-;; ontologizes the economics major and the requirements for an 
-;; econ degree 
 
 (isa passed Predicate)
 (isa test Predicate)
 
-;; has a student completed the core part of the economics major 
-(<== (completedRequirement Core ?student Economics)
-       (completedCore ?student Economics))
 
-(<== (completedCore ?student Economics)
+
+
+(<== (completedRequirement Core ?student Economics)
   (passed ?student ECON201)
   (passed ?student ECON202)
   (fulfills ?econometrics Econ_EconometricsRequirement)
@@ -22,32 +19,15 @@
   (fulfills ?stats Econ_StatsRequirement)
   (passed ?student ?stats))
   
-;; multiple courses fulfill the econometrics requirement 
 (fulfills ECON381-1 Econ_EconometricsRequirement)
 (fulfills ECON281 Econ_EconometricsRequirement)
 
-;; multiple courses fulfil the econ stats requirement
 (fulfills STAT210 Econ_StatsRequirement)
 (fulfills MATH314 Econ_StatsRequirement)
   
-;; a student has completed their electives if they have completed 
-;; their econ field course requirement 
 (<== (completedRequirement Electives ?student Economics)
   (completed ?student Econ_FieldCourseRequirement))
-
-;; a student has completed their econ fieldcourse requirement if 
-;; they have taken 6 econ field courses
-(<== (completed ?student Econ_FieldCourseRequirement)
-    (evaluate ?num_courses 
-        (LengthOfListFn 
-            (SetToListFn 
-                (TheClosedRetrievalSetOf ?course 
-                    (and
-                        (passed ?student ?course)
-                        (fulfills ?course Econ_FieldCourseRequirement))))))
-    (greaterThanOrEqualTo ?num_courses 6.0))
   
-;; these courses fulfill the econ field course requirement
 (fulfills ECON349 Econ_FieldCourseRequirement)
 (fulfills ECON341 Econ_FieldCourseRequirement)
 (fulfills ECON362 Econ_FieldCourseRequirement)
@@ -58,22 +38,37 @@
 (fulfills ECON351 Econ_FieldCourseRequirement)
 (fulfills ECON309 Econ_FieldCourseRequirement)
 
-  
-;; a student
-    
-(<== (completedRequirement Related ?student Economics)
-  (completed ?student Econ_RelatedFieldsCourseRequirement))
 
-(<== (completed ?student Econ_RelatedFieldCourseRequirement)
+(<== (completed ?student Econ_FieldCourseRequirement)
     (evaluate ?num_courses 
         (LengthOfListFn 
             (SetToListFn 
                 (TheClosedRetrievalSetOf ?course 
                     (and
                         (passed ?student ?course)
-                        (fulfills ?course Econ_RelatedFieldCourseRequirement))))))
+                        (fulfills ?course Econ_FieldCourseRequirement))))))
+    (greaterThanOrEqualTo ?num_courses 6.0))
+
+
+  ;;(passedRequirementCourse ?student Econ_FieldCourseRequirement ?course1)
+ ;; (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course2)
+  ;;(passedRequirementCourse ?student Econ_FieldCourseRequirement ?course3)
+ ;; (different ?course1 ?course2 ?course3))
+  
+(<== (completedRequirement Related ?student Economics)
+  (completed ?student Econ_RelatedFieldsCourseRequirement))
+
+(<== (completed ?student Econ_RelatedFieldsCourseRequirement)
+    (evaluate ?num_courses 
+        (LengthOfListFn 
+            (SetToListFn 
+                (TheClosedRetrievalSetOf ?course 
+                    (and
+                        (passed ?student ?course)
+                        (fulfills ?course Econ_RelatedFieldsCourseRequirement))))))
     (greaterThanOrEqualTo ?num_courses 3.0))
 
+  
 (fulfills MATH220 Econ_RelatedFieldsCourseRequirement)
 (fulfills STAT210 Econ_RelatedFieldsCourseRequirement)
 (fulfills MATH290-1 Econ_RelatedFieldsCourseRequirement)

@@ -19,6 +19,4 @@
       	(SetDifferenceFn 
           (TheSet Core Electives Related)
           (TheClosedRetrievalSetOf ?req
-			 	(completedRequirement ?req ?student ?major))
-		      	 ))
-    )
+			 	(completedRequirement ?req ?student ?major)))))
