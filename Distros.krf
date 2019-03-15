@@ -3,6 +3,9 @@
    
 ;; horn clause to see if student has completed all of their distribution
 ;; requirements for the Weinberg College 
+;;NOTE: the Requirements not met will not show Distros since it uses a different predicate,
+;;In future work, we can normalize these to use the same predicate
+
 (<== (completedDistroRequirement ?student)
   (completedDistroArea ?student I)
   (completedDistroArea ?student II)
@@ -22,6 +25,7 @@
    
 
 ;; distro areas that ALL classes fulfill
+;; Data from: https://www.weinberg.northwestern.edu/undergraduate/degree/distribution-requirements/
 
 (fulfillsDistro	ANTHRO213 I)
 (fulfillsDistro	ANTHRO308 I)
