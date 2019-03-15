@@ -1,6 +1,7 @@
 (in-microtheory DegreeRequirementsMt)	
 
 ;; the classes that william has passed
+(isa William Student)
 
 (passed William ECON201)
 (passed William ECON202)
