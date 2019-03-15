@@ -1,6 +1,8 @@
 (in-microtheory DegreeRequirementsMt)	
 
 ;; the classes that Julie has passed
+(isa Julie Student)
+
 
 (passed Julie ECON201)
 (passed Julie ECON202)
