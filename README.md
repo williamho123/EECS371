@@ -21,17 +21,17 @@ By running this query, you notice that while William has in fact completed an ec
 
 ## Use the query: (requirementNotMet ?student ?major ?r)
 
-This query will return the set of all requirments that a student has yet to complete to earn degree with some major.
+This query will return the set of all requirements that a student has yet to complete to earn degree with some major.
 Note that while ?student and ?major can be bound, ?r should be left free as it is the return variable.(e.g. (requirementNotMet Julie Electives ?r))
 
-## Use the query: (passedRequirementCourse ?student ?requirement ?course) 
+## Use the query: (passedRequirementCourse ?student ?requirement ?course)
 
 This query will return all course passed by some student that fulfill some requirement.
 All or some of these variables can be bound for more precision (e.g. (passedRequirementCourse Julie Econ_FieldCourseRequirment ?course)).
 
 Predicates that work with this query include: Econ_FieldCourseRequirement, Econ_RelatedFieldsCourseRequirement, Econ_EconometricsRequirement, Econ_StatsRequirement.
 
-## Use the query: (completedDistroArea ?student ?area) 
+## Use the query: (completedDistroArea ?student ?area)
 
 This query will return all distro areas (numbered I through VI) that have been completed by some student.
 Both of these variables may be bound (e.g. (completedDistroArea William IV))
