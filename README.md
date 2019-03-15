@@ -1,5 +1,7 @@
 # EECS 371 - Academic Advisor
 
+Group Members: William Ho, Richard Huang, Julie Kim, Alexis Martineau
+
 Any KRF files that need to be loaded should be loaded through the Companions interface.
 
 A high level overview of each file:
