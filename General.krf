@@ -15,6 +15,8 @@
     (fulfills ?course ?requirement))
 
 (<== (requirementNotMet ?student ?major ?not_met_reqs)
+    (isa ?student Student)
+    (isa ?major Major)
     (evaluate ?not_met_reqs
       	(SetDifferenceFn 
           (TheSet Core Electives Related)
