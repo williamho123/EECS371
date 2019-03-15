@@ -40,6 +40,7 @@
 
 
 (<== (completed ?student Econ_FieldCourseRequirement)
+    (isa ?student Student)
     (evaluate ?num_courses 
         (LengthOfListFn 
             (SetToListFn 
@@ -59,6 +60,7 @@
   (completed ?student Econ_RelatedFieldsCourseRequirement))
 
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
+    (isa ?student Student)
     (evaluate ?num_courses 
         (LengthOfListFn 
             (SetToListFn 
