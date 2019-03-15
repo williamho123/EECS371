@@ -1,13 +1,12 @@
 (in-microtheory DegreeRequirementsMt)	
 
-
   (completedDistroRequirement William)
 
 (isa passed Predicate)
 (isa test Predicate)
 
-(<== (test ?student Economics)
-  (passed ?student ECON201))
+
+
 
 (<== (completedRequirement Core ?student Economics)
   (passed ?student ECON201)
@@ -42,19 +41,34 @@
 
 
 (<== (completed ?student Econ_FieldCourseRequirement)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course1)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course2)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course3)
-  (different ?course1 ?course2 ?course3))
+    (evaluate ?num_courses 
+        (LengthOfListFn 
+            (SetToListFn 
+                (TheClosedRetrievalSetOf ?course 
+                    (and
+                        (passed ?student ?course)
+                        (fulfills ?course Econ_FieldCourseRequirement))))))
+    (greaterThanOrEqualTo ?num_courses 6.0))
+
+
+  ;;(passedRequirementCourse ?student Econ_FieldCourseRequirement ?course1)
+ ;; (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course2)
+  ;;(passedRequirementCourse ?student Econ_FieldCourseRequirement ?course3)
+ ;; (different ?course1 ?course2 ?course3))
   
 (<== (completedRequirement Related ?student Economics)
   (completed ?student Econ_RelatedFieldsCourseRequirement))
 
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
-  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course1)
-  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course2)
-  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course3)
-  (different ?course1 ?course2 ?course3))
+    (evaluate ?num_courses 
+        (LengthOfListFn 
+            (SetToListFn 
+                (TheClosedRetrievalSetOf ?course 
+                    (and
+                        (passed ?student ?course)
+                        (fulfills ?course Econ_RelatedFieldsCourseRequirement))))))
+    (greaterThanOrEqualTo ?num_courses 3.0))
+
   
 (fulfills MATH220 Econ_RelatedFieldsCourseRequirement)
 (fulfills STAT210 Econ_RelatedFieldsCourseRequirement)
@@ -64,4 +78,3 @@
 (fulfills MATH224 Econ_RelatedFieldsCourseRequirement)
 (fulfills MATH230 Econ_RelatedFieldsCourseRequirement)
 (fulfills PSYCH110 Econ_RelatedFieldsCourseRequirement)
-

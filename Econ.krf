@@ -6,11 +6,10 @@
 (isa passed Predicate)
 (isa test Predicate)
 
-;; sanity test 
-(<== (test ?student Economics)
-  (passed ?student ECON201))
-
 ;; has a student completed the core part of the economics major 
+(<== (completedRequirement Core ?student Economics)
+       (completedCore ?student Economics))
+
 (<== (completedCore ?student Economics)
   (passed ?student ECON201)
   (passed ?student ECON202)
@@ -21,7 +20,7 @@
   (passed ?student ECON311)
   (passed ?student MATH220)
   (fulfills ?stats Econ_StatsRequirement)
-  (passed ?student Econ_StatsRequirement))
+  (passed ?student ?stats))
   
 ;; multiple courses fulfill the econometrics requirement 
 (fulfills ECON381-1 Econ_EconometricsRequirement)
@@ -33,19 +32,20 @@
   
 ;; a student has completed their electives if they have completed 
 ;; their econ field course requirement 
-(<== (completedElectives ?student Economics)
+(<== (completedRequirement Electives ?student Economics)
   (completed ?student Econ_FieldCourseRequirement))
 
 ;; a student has completed their econ fieldcourse requirement if 
 ;; they have taken 6 econ field courses
 (<== (completed ?student Econ_FieldCourseRequirement)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course1)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course2)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course3)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course4)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course5)
-  (passedRequirementCourse ?student Econ_FieldCourseRequirement ?course6)
-  (different ?course1 ?course2 ?course3 ?course4 ?course5 ?course6))
+    (evaluate ?num_courses 
+        (LengthOfListFn 
+            (SetToListFn 
+                (TheClosedRetrievalSetOf ?course 
+                    (and
+                        (passed ?student ?course)
+                        (fulfills ?course Econ_FieldCourseRequirement))))))
+    (greaterThanOrEqualTo ?num_courses 6.0))
   
 ;; these courses fulfill the econ field course requirement
 (fulfills ECON349 Econ_FieldCourseRequirement)
@@ -54,21 +54,31 @@
 (fulfills ECON329 Econ_FieldCourseRequirement)
 (fulfills ECON330 Econ_FieldCourseRequirement)
 (fulfills ECON339 Econ_FieldCourseRequirement)
+(fulfills ECON342 Econ_FieldCourseRequirement)
+(fulfills ECON351 Econ_FieldCourseRequirement)
+(fulfills ECON309 Econ_FieldCourseRequirement)
 
   
 ;; a student
-(<== (completedRelated ?student Economics)
-  (completed ?student Econ_RelatedFieldsCourseRequirement))
     
+(<== (completedRequirement Related ?student Economics)
+  (completed ?student Econ_RelatedFieldsCourseRequirement))
 
-(<== (completed ?student Econ_RelatedFieldsCourseRequirement)
-  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course1)
-  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course2)
-  (passedRequirementCourse ?student Econ_RelatedFieldsCourseRequirement ?course3)
-  (different ?course1 ?course2 ?course3))
-  
+(<== (completed ?student Econ_RelatedFieldCourseRequirement)
+    (evaluate ?num_courses 
+        (LengthOfListFn 
+            (SetToListFn 
+                (TheClosedRetrievalSetOf ?course 
+                    (and
+                        (passed ?student ?course)
+                        (fulfills ?course Econ_RelatedFieldCourseRequirement))))))
+    (greaterThanOrEqualTo ?num_courses 3.0))
+
 (fulfills MATH220 Econ_RelatedFieldsCourseRequirement)
 (fulfills STAT210 Econ_RelatedFieldsCourseRequirement)
 (fulfills MATH290-1 Econ_RelatedFieldsCourseRequirement)
 (fulfills MATH290-2 Econ_RelatedFieldsCourseRequirement)
 (fulfills HISTORY250-2 Econ_RelatedFieldsCourseRequirement)
+(fulfills MATH224 Econ_RelatedFieldsCourseRequirement)
+(fulfills MATH230 Econ_RelatedFieldsCourseRequirement)
+(fulfills PSYCH110 Econ_RelatedFieldsCourseRequirement)
