@@ -1,5 +1,8 @@
 (in-microtheory DegreeRequirementsMt)	
 
+
+  (completedDistroRequirement William)
+
 (isa passed Predicate)
 (isa test Predicate)
 
