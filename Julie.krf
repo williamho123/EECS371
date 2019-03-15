@@ -1,8 +1,8 @@
-(in-microtheory DegreeRequirementsMt)	
+(in-microtheory DegreeRequirementsMt)
 
-;; the classes that Julie has passed
 (isa Julie Student)
 
+;; The classes that Julie has passed.
 
 (passed Julie ECON201)
 (passed Julie ECON202)
@@ -10,8 +10,7 @@
 (passed Julie ECON310-1)
 (passed Julie ECON310-2)
 (passed Julie ECON311)
-  
-  
+
 (passed Julie ECON349)
 (passed Julie ECON330)
 (passed Julie ECON381-1)
@@ -20,7 +19,6 @@
 (passed Julie STAT210)
 (passed Julie MATH224)
 (passed Julie MATH230)
-
 
 (passed Julie CHEM171)
 (passed Julie PSYCH212)
@@ -31,5 +29,3 @@
 (passed Julie RELIGION170)
 (passed Julie ASIANLC290)
 (passed Julie PERFST103)
-
-

@@ -1,7 +1,13 @@
-(in-microtheory DegreeRequirementsMt)	
+(in-microtheory DegreeRequirementsMt)
 
-;; courses, their levels, and their departments 
+;; [DEPRECATED]
+;; How we originally wanted to represent courses: (course ?courseNum ?courseLevel ?major)
+;; Probably useful for the future if we want to represent more majors.
+
+;; Courses, their levels, and their departments
+
 ;;; Economics Courses ;;;
+
 (course ECON201 200 Economics)
 (course ECON202 200 Economics)
 (course ECON249 200 Economics)
@@ -223,17 +229,13 @@
 (course ASTRON103 100 PhysicsAndAstronomy)
 (course ASTRON111 100 PhysicsAndAstronomy)
 (course ASTRON120 100 PhysicsAndAstronomy)
-
 (course ASTRON220 200 PhysicsAndAstronomy)
-
 (course ASTRON314 300 PhysicsAndAstronomy)
 (course ASTRON325 300 PhysicsAndAstronomy)
 (course ASTRON329 300 PhysicsAndAstronomy)
 (course ASTRON331 300 PhysicsAndAstronomy)
 (course ASTRON390 300 PhysicsAndAstronomy)
 (course ASTRON399 300 PhysicsAndAstronomy)
-
-
 (course PHYSICS103 100 PhysicsAndAstronomy)
 (course PHYSICS105 100 PhysicsAndAstronomy)
 (course PHYSICS125-1 100 PhysicsAndAstronomy)
@@ -251,10 +253,8 @@
 (course PHYSICS136-1 100Lab PhysicsAndAstronomy)
 (course PHYSICS136-2 100Lab PhysicsAndAstronomy)
 (course PHYSICS136-3 100Lab PhysicsAndAstronomy)
-
 (course PHYSICS238 200 PhysicsAndAstronomy)
 (course PHYSICS239 200 PhysicsAndAstronomy)
-
 (course PHYSICS311-1 300 PhysicsAndAstronomy)
 (course PHYSICS311-2 300 PhysicsAndAstronomy)
 (course PHYSICS330-1 300 PhysicsAndAstronomy)
@@ -278,13 +278,4 @@
 (course PHYSICS398 300 PhysicsAndAstronomy)
 (course PHYSICS399 300 PhysicsAndAstronomy)
 
-
-
-
 (course HIST250-2 200 History)
-
-
-
-
-
-

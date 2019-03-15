@@ -1,7 +1,8 @@
-(in-microtheory DegreeRequirementsMt)	
+(in-microtheory DegreeRequirementsMt)
 
-;; the classes that william has passed
 (isa William Student)
+
+;; The classes that william has passed.
 
 (passed William ECON201)
 (passed William ECON202)
@@ -15,21 +16,18 @@
 (passed William ECON362)
 (passed William ECON329)
 (passed William ECON330)
-(passed William ECON339)  
+(passed William ECON339)
 
 (passed William MATH220)
 (passed William STAT210)
 (passed William MATH290-1)
 (passed William MATH290-2)
-(passed William HISTORY250-2)
 
+(passed William HISTORY250-2)
 (passed William ASTRON120)
 (passed William EARTH105)
-
 (passed William HISTORY250-1)
-
 (passed William LING222)
 (passed William PHIL110)
-
 (passed William GERMAN228)
 (passed William ASIANLC290)

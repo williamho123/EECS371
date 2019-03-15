@@ -1,11 +1,8 @@
 (in-microtheory DegreeRequirementsMt)
 
-
-;; horn clause to see if student has completed all of their distribution
-;; requirements for the Weinberg College
-;;NOTE: the Requirements not met will not show Distros since it uses a different predicate,
-;;In future work, we can normalize these to use the same predicate
-
+;; Horn clause to see if student has completed all of their distribution requirements for Weinberg College.
+;; NOTE: the 'requirementNotMet' predicate will not show Distros since it uses a different predicate.
+;; In future work, we can normalize these to use the same predicate.
 (<== (completedDistroRequirement ?student)
   (completedDistroArea ?student I)
   (completedDistroArea ?student II)
@@ -14,8 +11,7 @@
   (completedDistroArea ?student V)
   (completedDistroArea ?student VI))
 
-;; horn clause to check if student has completed the distro
-;; in a specific area
+;; Horn clause to check if student has completed the distro in a specific area
 (<== (completedDistroArea ?student ?area)
   (passed ?student ?course1)
   (passed ?student ?course2)
@@ -23,8 +19,9 @@
   (fulfillsDistro ?course2 ?area)
   (different ?course1 ?course2))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; distro areas that ALL classes fulfill
+;; Distro areas that ALL classes fulfill
 ;; Data from: https://www.weinberg.northwestern.edu/undergraduate/degree/distribution-requirements/
 
 (fulfillsDistro	ANTHRO213 I)

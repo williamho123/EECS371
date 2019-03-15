@@ -3,6 +3,10 @@
 (isa passed Predicate)
 (isa Economics Major)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; A student has completed the core Economics requirements if they have passed all courses listed
+;; in the horn clause and fulfilled the requirements.
 (<== (completedRequirement Core ?student Economics)
   (passed ?student ECON201)
   (passed ?student ECON202)
@@ -15,10 +19,14 @@
   (fulfills ?stats Econ_StatsRequirement)
   (passed ?student ?stats))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Wrapper to see if a student has completed the electives requirement for Economics.
 (<== (completedRequirement Electives ?student Economics)
   (completed ?student Econ_FieldCourseRequirement))
 
-
+;; Checks using a Set to see if a student has passed 6 courses that fulfill the Economics field
+;; course requirement.
 (<== (completed ?student Econ_FieldCourseRequirement)
   (isa ?student Student)
   (evaluate ?num_courses
@@ -30,19 +38,26 @@
             (fulfills ?course Econ_FieldCourseRequirement))))))
   (greaterThanOrEqualTo ?num_courses 6.0))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Wrapper to see if a student has completed the related courses for Economics.
 (<== (completedRequirement Related ?student Economics)
   (completed ?student Econ_RelatedFieldsCourseRequirement))
 
+;; Checks using a Set to see if a student has passed 3 courses that fulfill the Economics related
+;; fields course requirement.
 (<== (completed ?student Econ_RelatedFieldsCourseRequirement)
-    (isa ?student Student)
-    (evaluate ?num_courses
-        (LengthOfListFn
-            (SetToListFn
-                (TheClosedRetrievalSetOf ?course
-                    (and
-                        (passed ?student ?course)
-                        (fulfills ?course Econ_RelatedFieldsCourseRequirement))))))
-    (greaterThanOrEqualTo ?num_courses 3.0))
+  (isa ?student Student)
+  (evaluate ?num_courses
+    (LengthOfListFn
+      (SetToListFn
+        (TheClosedRetrievalSetOf ?course
+          (and
+            (passed ?student ?course)
+            (fulfills ?course Econ_RelatedFieldsCourseRequirement))))))
+  (greaterThanOrEqualTo ?num_courses 3.0))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Courses that fulfill the Economics Major Requirement
 
@@ -96,6 +111,9 @@
 (fulfills ECON398-1 Econ_FieldCourseRequirement)
 (fulfills ECON398-2 Econ_FieldCourseRequirement)
 (fulfills ECON399 Econ_FieldCourseRequirement)
+
+;; NOTE: Lots of related courses count for the Economics major, so we have
+;; only represented a small subset here.
 
 (fulfills MATH220 Econ_RelatedFieldsCourseRequirement)
 (fulfills STAT210 Econ_RelatedFieldsCourseRequirement)

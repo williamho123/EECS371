@@ -1,24 +1,30 @@
-(in-microtheory DegreeRequirementsMt)	
+(in-microtheory DegreeRequirementsMt)
 
-;; a student has earned a degree in a major if they have 
-;; completed the core for that major, the elective courses for that 
-;; major, the related courses for that major, and the core courses for 
-;; that major along with their distro requirements
+;; A student has earned a degree in a major if they have
+;; completed the core for that major, the elective courses for that
+;; major, the related courses for that major, and the core courses for
+;; that major along with their distro requirements.
 (<== (earnedDegree ?student ?major)
- (completedRequirement Core ?student Economics)
- (completedRequirement Electives ?student Economics)
- (completedRequirement Related ?student Economics)
+  (completedRequirement Core ?student ?major)
+  (completedRequirement Electives ?student ?major)
+  (completedRequirement Related ?student ?major)
   (completedDistroRequirement ?student))
-  
-(<== (passedRequirementCourse ?student ?requirement ?course)
-    (passed ?student ?course)
-    (fulfills ?course ?requirement))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Returns all courses passed by a student for some requirement.
+(<== (passedRequirementCourse ?student ?requirement ?course)
+  (passed ?student ?course)
+  (fulfills ?course ?requirement))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Returns a set of requirements that a student has not met for a specific major.
 (<== (requirementNotMet ?student ?major ?not_met_reqs)
-    (isa ?student Student)
-    (isa ?major Major)
-    (evaluate ?not_met_reqs
-      	(SetDifferenceFn 
-          (TheSet Core Electives Related)
-          (TheClosedRetrievalSetOf ?req
-			 	(completedRequirement ?req ?student ?major)))))
+  (isa ?student Student)
+  (isa ?major Major)
+  (evaluate ?not_met_reqs
+    (SetDifferenceFn
+      (TheSet Core Electives Related)
+      (TheClosedRetrievalSetOf ?req
+        (completedRequirement ?req ?student ?major)))))
