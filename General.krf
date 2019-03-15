@@ -5,9 +5,9 @@
 ;; major, the related courses for that major, and the core courses for 
 ;; that major along with their distro requirements
 (<== (earnedDegree ?student ?major)
-  (completedCore ?student ?major)
-  (completedElectives ?student ?major)
-  (completedRelated ?student ?major)
+ (completedRequirement Core ?student Economics)
+ (completedRequirement Electives ?student Economics)
+ (completedRequirement Related ?student Economics)
   (completedDistroRequirement ?student))
   
 (<== (passedRequirementCourse ?student ?requirement ?course)
