@@ -14,3 +14,9 @@
     (passed ?student ?course)
     (fulfills ?course ?requirement))
 
+(<== (requirementNotMet ?student ?major ?not_met_reqs)
+    (evaluate ?not_met_reqs
+      	(SetDifferenceFn (TheClosedRetrievalSetOf ?req
+			 	(completedRequirement ?req ?student ?major))
+		      	 (TheSet Core Electives Related)))
+    )
